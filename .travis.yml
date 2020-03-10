@@ -42,7 +42,7 @@ env:
         # - ARCH=x86_64   VERSION=v3.11   QEMU_ARCH=x86_64    TAG_ARCH=amd64
         - ARCH=armhf    VERSION=v3.11   QEMU_ARCH=arm       TAG_ARCH=armhf
         # - ARCH=aarch64  VERSION=v3.11   QEMU_ARCH=aarch64   TAG_ARCH=aarch64
-        # - ARCH=aarch64  VERSION=v3.11   QEMU_ARCH=aarch64   TAG_ARCH=arm64
+        - ARCH=aarch64  VERSION=v3.11   QEMU_ARCH=aarch64   TAG_ARCH=arm64
         - ARCH=armv7    VERSION=v3.11   QEMU_ARCH=arm       TAG_ARCH=armv7
         # - ARCH=ppc64le  VERSION=v3.11   QEMU_ARCH=ppc64le   TAG_ARCH=ppc64le
 
