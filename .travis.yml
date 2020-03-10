@@ -1,6 +1,12 @@
 dist: xenial
 services: docker
 language: bash
+addons:
+  apt:
+    sources:
+        - sourceline: 'deb http://archive.ubuntu.com/ubuntu focal main universe'
+    packages:
+      - qemu-user-static
 env:
     global:
         - QEMU_VER=v4.2.0-6
@@ -56,7 +62,6 @@ env:
         - ARCH=armv7    VERSION=edge    QEMU_ARCH=arm       TAG_ARCH=armv7
         # - ARCH=ppc64le  VERSION=edge    QEMU_ARCH=ppc64le   TAG_ARCH=ppc64le
 script:
-    - docker run --rm --privileged multiarch/qemu-user-static:register --reset
     - sudo ./update.sh -a "$ARCH" -v "$VERSION" -q "$QEMU_ARCH" -u "$QEMU_VER" -d "$DOCKER_REPO" -t "$TAG_ARCH" -l "$LATEST_VERSION"
 after_success:
     - |
